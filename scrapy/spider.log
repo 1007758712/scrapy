@@ -1,0 +1,959 @@
+2026-04-15 13:38:45,670 [INFO] ============================================================
+2026-04-15 13:38:45,670 [INFO] SellerSprite 产品数据爬虫启动
+2026-04-15 13:38:45,670 [INFO] 目标分类: Automotive (节点ID: 15684181)
+2026-04-15 13:38:45,670 [INFO] 目标数据量: 10000 条
+2026-04-15 13:38:45,670 [INFO] 每页: 60 条
+2026-04-15 13:38:45,670 [INFO] ============================================================
+2026-04-15 13:38:47,126 [INFO] 检查登录状态...
+2026-04-15 13:39:01,829 [INFO] 当前页面: https://www.sellersprite.com/cn/w/user/login
+2026-04-15 13:39:01,829 [INFO] 需要登录，开始登录流程...
+2026-04-15 13:39:01,829 [ERROR] 请先在 config.py 中填写账号密码！
+2026-04-15 13:39:01,829 [INFO] 等待你手动登录...
+2026-04-15 13:39:01,829 [INFO] 请在浏览器中手动完成登录，登录成功后按 Enter 继续...
+2026-04-15 13:40:13,778 [INFO] ✓ API 拦截器已注册
+2026-04-15 13:40:13,778 [INFO] 导航到产品调研页面...
+2026-04-15 13:40:13,778 [INFO] URL: https://www.sellersprite.com/v3/product-research?market=US&page=1&size=60&symbolFlag=false&monthName=bsr_sales_nearly&se...
+2026-04-15 13:40:13,906 [ERROR] 爬取过程中出错: Page.goto: Navigation to "https://www.sellersprite.com/v3/product-research?market=US&page=1&size=60&symbolFlag=false&monthName=bsr_sales_nearly&selectType=2&filterSub=false&weightUnit=g&order%5Bfield%5D=amz_unit&order%5Bdesc%5D=true&productTags=%5B%5D&nodeIdPaths=%5B%2215684181%22%5D&sellerTypes=%5B%5D&eligibility=%5B%5D&pkgDimensionTypeList=%5B%5D&sellerNationList=%5B%5D&lowPrice=N&minSales=100" is interrupted by another navigation to "https://www.sellersprite.com/v2/welcome"
+Call log:
+  - navigating to "https://www.sellersprite.com/v3/product-research?market=US&page=1&size=60&symbolFlag=false&monthName=bsr_sales_nearly&selectType=2&filterSub=false&weightUnit=g&order%5Bfield%5D=amz_unit&order%5Bdesc%5D=true&productTags=%5B%5D&nodeIdPaths=%5B%2215684181%22%5D&sellerTypes=%5B%5D&eligibility=%5B%5D&pkgDimensionTypeList=%5B%5D&sellerNationList=%5B%5D&lowPrice=N&minSales=100", waiting until "load"
+Traceback (most recent call last):
+  File "D:\snf\git\scrapy\sellersprite_spider.py", line 114, in run
+    await self._navigate_to_product_research()
+  File "D:\snf\git\scrapy\sellersprite_spider.py", line 425, in _navigate_to_product_research
+    await self.page.goto(url, timeout=config.PAGE_TIMEOUT)
+  File "D:\software\anaconda\envs\snf\Lib\site-packages\playwright\async_api\_generated.py", line 9045, in goto
+    await self._impl_obj.goto(
+  File "D:\software\anaconda\envs\snf\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\software\anaconda\envs\snf\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "D:\software\anaconda\envs\snf\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\software\anaconda\envs\snf\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.goto: Navigation to "https://www.sellersprite.com/v3/product-research?market=US&page=1&size=60&symbolFlag=false&monthName=bsr_sales_nearly&selectType=2&filterSub=false&weightUnit=g&order%5Bfield%5D=amz_unit&order%5Bdesc%5D=true&productTags=%5B%5D&nodeIdPaths=%5B%2215684181%22%5D&sellerTypes=%5B%5D&eligibility=%5B%5D&pkgDimensionTypeList=%5B%5D&sellerNationList=%5B%5D&lowPrice=N&minSales=100" is interrupted by another navigation to "https://www.sellersprite.com/v2/welcome"
+Call log:
+  - navigating to "https://www.sellersprite.com/v3/product-research?market=US&page=1&size=60&symbolFlag=false&monthName=bsr_sales_nearly&selectType=2&filterSub=false&weightUnit=g&order%5Bfield%5D=amz_unit&order%5Bdesc%5D=true&productTags=%5B%5D&nodeIdPaths=%5B%2215684181%22%5D&sellerTypes=%5B%5D&eligibility=%5B%5D&pkgDimensionTypeList=%5B%5D&sellerNationList=%5B%5D&lowPrice=N&minSales=100", waiting until "load"
+
+2026-04-15 13:40:13,915 [INFO] 浏览器登录状态已保存
+2026-04-15 13:42:09,503 [INFO] ============================================================
+2026-04-15 13:42:09,503 [INFO] SellerSprite 产品数据爬虫启动
+2026-04-15 13:42:09,505 [INFO] 目标分类: Automotive (节点ID: 15684181)
+2026-04-15 13:42:09,505 [INFO] 目标数据量: 10000 条
+2026-04-15 13:42:09,505 [INFO] 每页: 60 条
+2026-04-15 13:42:09,505 [INFO] ============================================================
+2026-04-15 13:42:09,959 [INFO] 发现已保存的登录状态，尝试复用...
+2026-04-15 13:42:10,100 [INFO] 检查登录状态...
+2026-04-15 13:42:17,246 [INFO] 当前页面: https://www.sellersprite.com/v3/dashboard
+2026-04-15 13:42:17,264 [INFO] ✓ 已经处于登录状态
+2026-04-15 13:42:17,266 [INFO] ✓ API 拦截器已注册
+2026-04-15 13:42:17,267 [INFO] 导航到产品调研页面...
+2026-04-15 13:42:17,267 [INFO] URL: https://www.sellersprite.com/v3/product-research?market=US&page=1&size=60&symbolFlag=false&monthName=bsr_sales_nearly&se...
+2026-04-15 13:42:18,054 [INFO] ✓ 发现 API 端点: https://www.sellersprite.com/v3/api/product-research/support_new_station
+2026-04-15 13:42:18,095 [INFO]   API 拦截成功: 1 条产品数据 (total=None, URL片段=...https://www.sellersprite.com/v3/api/product-research/US/nodes)
+2026-04-15 13:42:18,095 [INFO]   数据字段 (8 个): ['id', 'label', 'nodeLabel', 'alias', 'products', 'nodeLabelLocale', 'nodeLabelPathLocale', 'children']
+2026-04-15 13:42:19,476 [INFO]   API 拦截成功: 60 条产品数据 (total=78017, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:42:22,697 [INFO] ✓ 页面已加载: https://www.sellersprite.com/v3/product-research?market=US&page=1&size=60&symbolFlag=false&monthName
+2026-04-15 13:42:22,697 [INFO] 等待首页数据加载...
+2026-04-15 13:42:22,728 [INFO]   找到数据表格: .el-table
+2026-04-15 13:42:22,728 [INFO] ✓ 首页数据已获取: 61 条
+2026-04-15 13:42:22,728 [INFO]   总记录数: 78017, 总页数: 1301
+2026-04-15 13:42:22,729 [INFO]   将只爬取前 10000 条
+2026-04-15 13:42:22,729 [INFO] 开始翻页爬取: 共需 167 页
+2026-04-15 13:42:22,729 [INFO] [2/167] 已获取 61 条, 等待 5.4s 后翻页...
+2026-04-15 13:42:30,136 [INFO]   API 拦截成功: 60 条产品数据 (total=78017, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:42:30,548 [INFO]   ✓ 第 2 页获取 60 条数据
+2026-04-15 13:42:30,549 [INFO] [3/167] 已获取 121 条, 等待 4.2s 后翻页...
+2026-04-15 13:42:36,672 [INFO]   API 拦截成功: 60 条产品数据 (total=78017, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:42:37,197 [INFO]   ✓ 第 3 页获取 60 条数据
+2026-04-15 13:42:37,197 [INFO] [4/167] 已获取 181 条, 等待 5.0s 后翻页...
+2026-04-15 13:42:44,140 [INFO]   API 拦截成功: 60 条产品数据 (total=78018, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:42:44,792 [INFO]   ✓ 第 4 页获取 60 条数据
+2026-04-15 13:42:44,792 [INFO] [5/167] 已获取 241 条, 等待 4.1s 后翻页...
+2026-04-15 13:42:50,662 [INFO]   API 拦截成功: 60 条产品数据 (total=78018, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:42:51,251 [INFO]   ✓ 第 5 页获取 60 条数据
+2026-04-15 13:42:51,252 [INFO] [6/167] 已获取 301 条, 等待 5.6s 后翻页...
+2026-04-15 13:42:58,880 [INFO]   API 拦截成功: 60 条产品数据 (total=78018, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:42:59,271 [INFO]   ✓ 第 6 页获取 60 条数据
+2026-04-15 13:42:59,271 [INFO] [7/167] 已获取 361 条, 等待 4.9s 后翻页...
+2026-04-15 13:43:06,150 [INFO]   API 拦截成功: 60 条产品数据 (total=78019, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:43:06,742 [INFO]   ✓ 第 7 页获取 60 条数据
+2026-04-15 13:43:06,742 [INFO] [8/167] 已获取 421 条, 等待 3.8s 后翻页...
+2026-04-15 13:43:12,387 [INFO]   API 拦截成功: 60 条产品数据 (total=78019, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:43:12,994 [INFO]   ✓ 第 8 页获取 60 条数据
+2026-04-15 13:43:12,995 [INFO] [9/167] 已获取 481 条, 等待 5.3s 后翻页...
+2026-04-15 13:43:38,901 [WARNING]   ✗ 第 9 页未获取到新数据
+2026-04-15 13:43:38,901 [WARNING] 翻页失败，重试...
+2026-04-15 13:43:43,237 [INFO]   API 拦截成功: 60 条产品数据 (total=78017, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:43:44,841 [INFO]   ✓ 第 9 页获取 60 条数据
+2026-04-15 13:43:44,842 [INFO] [10/167] 已获取 541 条, 等待 4.7s 后翻页...
+2026-04-15 13:43:46,293 [INFO]   API 拦截成功: 60 条产品数据 (total=78019, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:43:51,364 [INFO]   API 拦截成功: 60 条产品数据 (total=78019, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:43:51,915 [INFO]   ✓ 第 10 页获取 60 条数据
+2026-04-15 13:43:51,916 [INFO] 去重: 661 → 661 条
+2026-04-15 13:43:52,192 [INFO] ✓ JSON 已保存: D:\snf\git\scrapy\data\automotive\sellersprite_automotive_20260415_134209_checkpoint_p10.json
+2026-04-15 13:43:52,227 [ERROR] 保存 Excel 失败: No module named 'openpyxl'
+2026-04-15 13:43:52,239 [ERROR] 简化保存也失败: No module named 'openpyxl'
+2026-04-15 13:43:52,240 [INFO]   ✓ 已保存 checkpoint (第 10 页)
+2026-04-15 13:43:52,240 [INFO] [11/167] 已获取 661 条, 等待 4.9s 后翻页...
+2026-04-15 13:43:59,150 [INFO]   API 拦截成功: 60 条产品数据 (total=78020, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:43:59,721 [INFO]   ✓ 第 11 页获取 60 条数据
+2026-04-15 13:43:59,722 [INFO] [12/167] 已获取 721 条, 等待 4.9s 后翻页...
+2026-04-15 13:44:06,436 [INFO]   API 拦截成功: 60 条产品数据 (total=78020, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:44:07,065 [INFO]   ✓ 第 12 页获取 60 条数据
+2026-04-15 13:44:07,065 [INFO] [13/167] 已获取 781 条, 等待 4.0s 后翻页...
+2026-04-15 13:44:13,030 [INFO]   API 拦截成功: 60 条产品数据 (total=78020, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:44:13,613 [INFO]   ✓ 第 13 页获取 60 条数据
+2026-04-15 13:44:13,614 [INFO] [14/167] 已获取 841 条, 等待 4.1s 后翻页...
+2026-04-15 13:44:19,676 [INFO]   API 拦截成功: 60 条产品数据 (total=78019, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:44:20,262 [INFO]   ✓ 第 14 页获取 60 条数据
+2026-04-15 13:44:20,262 [INFO] [15/167] 已获取 901 条, 等待 5.4s 后翻页...
+2026-04-15 13:44:27,530 [INFO]   API 拦截成功: 60 条产品数据 (total=78019, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:44:28,041 [INFO]   ✓ 第 15 页获取 60 条数据
+2026-04-15 13:44:28,042 [INFO] [16/167] 已获取 961 条, 等待 3.9s 后翻页...
+2026-04-15 13:44:33,968 [INFO]   API 拦截成功: 60 条产品数据 (total=78019, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:44:34,483 [INFO]   ✓ 第 16 页获取 60 条数据
+2026-04-15 13:44:34,483 [INFO] [17/167] 已获取 1021 条, 等待 4.7s 后翻页...
+2026-04-15 13:44:41,080 [INFO]   API 拦截成功: 60 条产品数据 (total=78019, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:44:41,773 [INFO]   ✓ 第 17 页获取 60 条数据
+2026-04-15 13:44:41,774 [INFO] [18/167] 已获取 1081 条, 等待 5.4s 后翻页...
+2026-04-15 13:44:49,149 [INFO]   API 拦截成功: 60 条产品数据 (total=78020, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:44:49,763 [INFO]   ✓ 第 18 页获取 60 条数据
+2026-04-15 13:44:49,764 [INFO] [19/167] 已获取 1141 条, 等待 5.6s 后翻页...
+2026-04-15 13:44:57,391 [INFO]   API 拦截成功: 60 条产品数据 (total=78020, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:44:57,938 [INFO]   ✓ 第 19 页获取 60 条数据
+2026-04-15 13:44:57,938 [INFO] [20/167] 已获取 1201 条, 等待 3.1s 后翻页...
+2026-04-15 13:45:02,994 [INFO]   API 拦截成功: 60 条产品数据 (total=78021, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:45:03,522 [INFO]   ✓ 第 20 页获取 60 条数据
+2026-04-15 13:45:03,523 [INFO] 去重: 1261 → 1261 条
+2026-04-15 13:45:04,060 [INFO] ✓ JSON 已保存: D:\snf\git\scrapy\data\automotive\sellersprite_automotive_20260415_134209_checkpoint_p20.json
+2026-04-15 13:45:04,130 [ERROR] 保存 Excel 失败: No module named 'openpyxl'
+2026-04-15 13:45:04,161 [ERROR] 简化保存也失败: No module named 'openpyxl'
+2026-04-15 13:45:04,164 [INFO]   ✓ 已保存 checkpoint (第 20 页)
+2026-04-15 13:45:04,164 [INFO] [21/167] 已获取 1261 条, 等待 3.2s 后翻页...
+2026-04-15 13:45:09,417 [INFO]   API 拦截成功: 60 条产品数据 (total=78020, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:45:09,962 [INFO]   ✓ 第 21 页获取 60 条数据
+2026-04-15 13:45:09,962 [INFO] [22/167] 已获取 1321 条, 等待 3.5s 后翻页...
+2026-04-15 13:45:15,563 [INFO]   API 拦截成功: 60 条产品数据 (total=78021, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:45:15,998 [INFO]   ✓ 第 22 页获取 60 条数据
+2026-04-15 13:45:15,999 [INFO] [23/167] 已获取 1381 条, 等待 4.1s 后翻页...
+2026-04-15 13:45:22,039 [INFO]   API 拦截成功: 60 条产品数据 (total=78022, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:45:22,679 [INFO]   ✓ 第 23 页获取 60 条数据
+2026-04-15 13:45:22,680 [INFO] [24/167] 已获取 1441 条, 等待 4.1s 后翻页...
+2026-04-15 13:45:28,578 [INFO]   API 拦截成功: 60 条产品数据 (total=78022, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:45:29,184 [INFO]   ✓ 第 24 页获取 60 条数据
+2026-04-15 13:45:29,185 [INFO] [25/167] 已获取 1501 条, 等待 5.5s 后翻页...
+2026-04-15 13:45:36,837 [INFO]   API 拦截成功: 60 条产品数据 (total=78023, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:45:37,101 [INFO]   ✓ 第 25 页获取 60 条数据
+2026-04-15 13:45:37,101 [INFO] [26/167] 已获取 1561 条, 等待 3.8s 后翻页...
+2026-04-15 13:45:42,876 [INFO]   API 拦截成功: 60 条产品数据 (total=78021, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:45:43,454 [INFO]   ✓ 第 26 页获取 60 条数据
+2026-04-15 13:45:43,455 [INFO] [27/167] 已获取 1621 条, 等待 5.9s 后翻页...
+2026-04-15 13:45:51,365 [INFO]   API 拦截成功: 60 条产品数据 (total=78018, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 13:45:51,793 [INFO]   ✓ 第 27 页获取 60 条数据
+2026-04-15 13:45:51,794 [INFO] [28/167] 已获取 1681 条, 等待 3.2s 后翻页...
+2026-04-15 14:42:55,727 [INFO] ============================================================
+2026-04-15 14:42:55,727 [INFO] SellerSprite 产品数据爬虫启动
+2026-04-15 14:42:55,727 [INFO] 目标分类: Automotive (节点ID: 15684181)
+2026-04-15 14:42:55,727 [INFO] 目标数据量: 10000 条
+2026-04-15 14:42:55,727 [INFO] 每页: 100 条
+2026-04-15 14:42:55,727 [INFO] ============================================================
+2026-04-15 14:42:56,160 [INFO] 发现已保存的登录状态，尝试复用...
+2026-04-15 14:42:56,310 [INFO] 检查登录状态...
+2026-04-15 14:43:02,310 [INFO] 当前页面: https://www.sellersprite.com/w/user/login?callback=%2Fv3%2Fdashboard
+2026-04-15 14:43:02,311 [INFO] 需要登录，开始登录流程...
+2026-04-15 14:43:04,322 [INFO] 当前登录页面: https://www.sellersprite.com/w/user/login?callback=%2Fv3%2Fdashboard
+2026-04-15 14:43:20,934 [ERROR] 爬取过程中出错: ElementHandle.click: Element is not attached to the DOM
+Call log:
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    30 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+    - waiting for" https://www.sellersprite.com/w/user/signin" navigation to finish...
+    - navigated to "https://www.sellersprite.com/v3/dashboard"
+    - waiting for element to be visible, enabled and stable
+Traceback (most recent call last):
+  File "D:\snf\git\scrapy\sellersprite_spider.py", line 108, in run
+    await self._login(state_file)
+  File "D:\snf\git\scrapy\sellersprite_spider.py", line 171, in _login
+    await self._do_login()
+  File "D:\snf\git\scrapy\sellersprite_spider.py", line 278, in _do_login
+    await elem.click()
+  File "D:\software\anaconda\envs\snf\Lib\site-packages\playwright\async_api\_generated.py", line 2157, in click
+    await self._impl_obj.click(
+  File "D:\software\anaconda\envs\snf\Lib\site-packages\playwright\_impl\_element_handle.py", line 143, in click
+    await self._channel.send(
+  File "D:\software\anaconda\envs\snf\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\software\anaconda\envs\snf\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: ElementHandle.click: Element is not attached to the DOM
+Call log:
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    30 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+    - waiting for" https://www.sellersprite.com/w/user/signin" navigation to finish...
+    - navigated to "https://www.sellersprite.com/v3/dashboard"
+    - waiting for element to be visible, enabled and stable
+
+2026-04-15 14:43:20,941 [INFO] 浏览器登录状态已保存
+2026-04-15 14:45:16,406 [INFO] ============================================================
+2026-04-15 14:45:16,406 [INFO] SellerSprite 产品数据爬虫启动
+2026-04-15 14:45:16,406 [INFO] 目标分类: Automotive (节点ID: 15684181)
+2026-04-15 14:45:16,406 [INFO] 目标数据量: 10000 条
+2026-04-15 14:45:16,406 [INFO] 每页: 100 条
+2026-04-15 14:45:16,406 [INFO] ============================================================
+2026-04-15 14:45:16,898 [INFO] 发现已保存的登录状态，尝试复用...
+2026-04-15 14:45:17,045 [INFO] 检查登录状态...
+2026-04-15 14:45:30,301 [INFO] 当前页面: https://www.sellersprite.com/v3/dashboard
+2026-04-15 14:45:30,322 [INFO] ✓ 已经处于登录状态
+2026-04-15 14:45:30,324 [INFO] ✓ API 拦截器已注册
+2026-04-15 14:45:30,324 [INFO] 导航到产品调研页面...
+2026-04-15 14:45:30,324 [INFO] URL: https://www.sellersprite.com/v3/product-research?market=US&page=1&size=100&symbolFlag=false&monthName=bsr_sales_nearly&s...
+2026-04-15 14:45:31,087 [INFO] ✓ 发现 API 端点: https://www.sellersprite.com/v3/api/product-research/support_new_station
+2026-04-15 14:45:31,181 [INFO]   API 拦截成功: 1 条产品数据 (total=None, URL片段=...https://www.sellersprite.com/v3/api/product-research/US/nodes)
+2026-04-15 14:45:31,181 [INFO]   数据字段 (8 个): ['id', 'label', 'nodeLabel', 'alias', 'products', 'nodeLabelLocale', 'nodeLabelPathLocale', 'children']
+2026-04-15 14:45:33,343 [INFO]   API 拦截成功: 100 条产品数据 (total=77952, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:45:37,661 [INFO] ✓ 页面已加载: https://www.sellersprite.com/v3/product-research?market=US&page=1&size=100&symbolFlag=false&monthNam
+2026-04-15 14:45:37,661 [INFO] 等待首页数据加载...
+2026-04-15 14:45:37,700 [INFO]   找到数据表格: .el-table
+2026-04-15 14:45:37,700 [INFO] ✓ 首页数据已获取: 101 条
+2026-04-15 14:45:37,700 [INFO]   总记录数: 77952, 总页数: 780
+2026-04-15 14:45:37,700 [INFO]   将只爬取前 10000 条
+2026-04-15 14:45:37,700 [INFO] 开始翻页爬取: 共需 100 页
+2026-04-15 14:45:37,700 [INFO] [2/100] 已获取 101 条, 等待 3.7s 后翻页...
+2026-04-15 14:45:43,902 [INFO]   API 拦截成功: 100 条产品数据 (total=77952, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:45:43,972 [INFO]   ✓ 第 2 页获取 100 条数据
+2026-04-15 14:45:43,973 [INFO] [3/100] 已获取 201 条, 等待 4.8s 后翻页...
+2026-04-15 14:45:51,344 [INFO]   API 拦截成功: 100 条产品数据 (total=77952, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:45:51,379 [INFO]   ✓ 第 3 页获取 100 条数据
+2026-04-15 14:45:51,380 [INFO] [4/100] 已获取 301 条, 等待 4.0s 后翻页...
+2026-04-15 14:45:57,954 [INFO]   API 拦截成功: 100 条产品数据 (total=77952, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:45:58,927 [INFO]   ✓ 第 4 页获取 100 条数据
+2026-04-15 14:45:58,927 [INFO] [5/100] 已获取 401 条, 等待 4.1s 后翻页...
+2026-04-15 14:46:05,579 [INFO]   API 拦截成功: 100 条产品数据 (total=77952, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:46:05,579 [INFO]   ✓ 第 5 页获取 100 条数据
+2026-04-15 14:46:05,579 [INFO] [6/100] 已获取 501 条, 等待 5.2s 后翻页...
+2026-04-15 14:46:13,632 [INFO]   API 拦截成功: 100 条产品数据 (total=77945, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:46:14,600 [INFO]   ✓ 第 6 页获取 100 条数据
+2026-04-15 14:46:14,600 [INFO] [7/100] 已获取 601 条, 等待 5.7s 后翻页...
+2026-04-15 14:46:23,426 [INFO]   API 拦截成功: 100 条产品数据 (total=77945, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:46:24,347 [INFO]   ✓ 第 7 页获取 100 条数据
+2026-04-15 14:46:24,347 [INFO] [8/100] 已获取 701 条, 等待 4.1s 后翻页...
+2026-04-15 14:46:30,968 [INFO]   API 拦截成功: 100 条产品数据 (total=77944, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:46:30,968 [INFO]   ✓ 第 8 页获取 100 条数据
+2026-04-15 14:46:30,968 [INFO] [9/100] 已获取 801 条, 等待 4.8s 后翻页...
+2026-04-15 14:46:38,523 [INFO]   API 拦截成功: 100 条产品数据 (total=77944, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:46:39,370 [INFO]   ✓ 第 9 页获取 100 条数据
+2026-04-15 14:46:39,371 [INFO] [10/100] 已获取 901 条, 等待 3.7s 后翻页...
+2026-04-15 14:46:45,741 [INFO]   API 拦截成功: 100 条产品数据 (total=77944, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:46:46,655 [INFO]   ✓ 第 10 页获取 100 条数据
+2026-04-15 14:46:46,655 [INFO] 去重: 1001 → 1001 条
+2026-04-15 14:46:46,998 [INFO] ✓ JSON 已保存: D:\snf\git\scrapy\data\automotive\sellersprite_automotive_20260415_144516_checkpoint_p10.json
+2026-04-15 14:46:49,217 [INFO] ✓ Excel 已保存: D:\snf\git\scrapy\data\automotive\sellersprite_automotive_20260415_144516_checkpoint_p10.xlsx (1001 行, 171 列)
+2026-04-15 14:46:49,218 [INFO]   列名: ['id', 'label', 'nodeLabel', 'alias', 'products', 'nodeLabelLocale', 'nodeLabelPathLocale', 'children', 'guestId', 'pages', 'page', 'size', 'total', 'took', 'url', 'items', 'terminal', 'hasNextPage', 'marketId', 'station']...
+2026-04-15 14:46:49,218 [INFO]   ✓ 已保存 checkpoint (第 10 页)
+2026-04-15 14:46:49,219 [INFO] [11/100] 已获取 1001 条, 等待 4.5s 后翻页...
+2026-04-15 14:46:56,172 [INFO]   API 拦截成功: 100 条产品数据 (total=77944, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:46:56,279 [INFO]   ✓ 第 11 页获取 100 条数据
+2026-04-15 14:46:56,279 [INFO] [12/100] 已获取 1101 条, 等待 5.1s 后翻页...
+2026-04-15 14:47:03,888 [INFO]   API 拦截成功: 100 条产品数据 (total=77944, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:47:03,947 [INFO]   ✓ 第 12 页获取 100 条数据
+2026-04-15 14:47:03,948 [INFO] [13/100] 已获取 1201 条, 等待 5.2s 后翻页...
+2026-04-15 14:47:11,554 [INFO]   API 拦截成功: 100 条产品数据 (total=77944, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:47:11,689 [INFO]   ✓ 第 13 页获取 100 条数据
+2026-04-15 14:47:11,690 [INFO] [14/100] 已获取 1301 条, 等待 3.2s 后翻页...
+2026-04-15 14:47:17,570 [INFO]   API 拦截成功: 100 条产品数据 (total=77944, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:47:18,570 [INFO]   ✓ 第 14 页获取 100 条数据
+2026-04-15 14:47:18,570 [INFO] [15/100] 已获取 1401 条, 等待 3.9s 后翻页...
+2026-04-15 14:47:25,164 [INFO]   API 拦截成功: 100 条产品数据 (total=77944, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:47:25,165 [INFO]   ✓ 第 15 页获取 100 条数据
+2026-04-15 14:47:25,165 [INFO] [16/100] 已获取 1501 条, 等待 5.6s 后翻页...
+2026-04-15 14:47:33,754 [INFO]   API 拦截成功: 100 条产品数据 (total=77943, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:47:34,718 [INFO]   ✓ 第 16 页获取 100 条数据
+2026-04-15 14:47:34,718 [INFO] [17/100] 已获取 1601 条, 等待 3.5s 后翻页...
+2026-04-15 14:47:41,128 [INFO]   API 拦截成功: 100 条产品数据 (total=77943, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:47:41,831 [INFO]   ✓ 第 17 页获取 100 条数据
+2026-04-15 14:47:41,832 [INFO] [18/100] 已获取 1701 条, 等待 5.0s 后翻页...
+2026-04-15 14:47:49,551 [INFO]   API 拦截成功: 100 条产品数据 (total=77941, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:47:49,605 [INFO]   ✓ 第 18 页获取 100 条数据
+2026-04-15 14:47:49,606 [INFO] [19/100] 已获取 1801 条, 等待 4.4s 后翻页...
+2026-04-15 14:47:56,717 [INFO]   API 拦截成功: 100 条产品数据 (total=77941, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:47:57,638 [INFO]   ✓ 第 19 页获取 100 条数据
+2026-04-15 14:47:57,638 [INFO] [20/100] 已获取 1901 条, 等待 5.9s 后翻页...
+2026-04-15 14:48:06,130 [INFO]   API 拦截成功: 100 条产品数据 (total=77941, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:48:07,062 [INFO]   ✓ 第 20 页获取 100 条数据
+2026-04-15 14:48:07,063 [INFO] 去重: 2001 → 2001 条
+2026-04-15 14:48:07,785 [INFO] ✓ JSON 已保存: D:\snf\git\scrapy\data\automotive\sellersprite_automotive_20260415_144516_checkpoint_p20.json
+2026-04-15 14:48:12,067 [INFO] ✓ Excel 已保存: D:\snf\git\scrapy\data\automotive\sellersprite_automotive_20260415_144516_checkpoint_p20.xlsx (2001 行, 171 列)
+2026-04-15 14:48:12,068 [INFO]   列名: ['id', 'label', 'nodeLabel', 'alias', 'products', 'nodeLabelLocale', 'nodeLabelPathLocale', 'children', 'guestId', 'pages', 'page', 'size', 'total', 'took', 'url', 'items', 'terminal', 'hasNextPage', 'marketId', 'station']...
+2026-04-15 14:48:12,069 [INFO]   ✓ 已保存 checkpoint (第 20 页)
+2026-04-15 14:48:12,070 [INFO] [21/100] 已获取 2001 条, 等待 3.6s 后翻页...
+2026-04-15 14:48:18,217 [INFO]   API 拦截成功: 100 条产品数据 (total=77941, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:48:18,315 [INFO]   ✓ 第 21 页获取 100 条数据
+2026-04-15 14:48:18,316 [INFO] [22/100] 已获取 2101 条, 等待 4.5s 后翻页...
+2026-04-15 14:48:25,452 [INFO]   API 拦截成功: 100 条产品数据 (total=77941, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:48:25,453 [INFO]   ✓ 第 22 页获取 100 条数据
+2026-04-15 14:48:25,453 [INFO] [23/100] 已获取 2201 条, 等待 3.3s 后翻页...
+2026-04-15 14:48:31,585 [INFO]   API 拦截成功: 100 条产品数据 (total=77941, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:48:31,675 [INFO]   ✓ 第 23 页获取 100 条数据
+2026-04-15 14:48:31,676 [INFO] [24/100] 已获取 2301 条, 等待 4.9s 后翻页...
+2026-04-15 14:48:39,358 [INFO]   API 拦截成功: 100 条产品数据 (total=77941, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:48:40,272 [INFO]   ✓ 第 24 页获取 100 条数据
+2026-04-15 14:48:40,273 [INFO] [25/100] 已获取 2401 条, 等待 4.1s 后翻页...
+2026-04-15 14:48:46,863 [INFO]   API 拦截成功: 100 条产品数据 (total=77941, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:48:46,945 [INFO]   ✓ 第 25 页获取 100 条数据
+2026-04-15 14:48:46,946 [INFO] [26/100] 已获取 2501 条, 等待 4.9s 后翻页...
+2026-04-15 14:48:54,531 [INFO]   API 拦截成功: 100 条产品数据 (total=77941, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:48:55,508 [INFO]   ✓ 第 26 页获取 100 条数据
+2026-04-15 14:48:55,508 [INFO] [27/100] 已获取 2601 条, 等待 3.9s 后翻页...
+2026-04-15 14:49:01,999 [INFO]   API 拦截成功: 100 条产品数据 (total=77941, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:49:02,000 [INFO]   ✓ 第 27 页获取 100 条数据
+2026-04-15 14:49:02,000 [INFO] [28/100] 已获取 2701 条, 等待 3.3s 后翻页...
+2026-04-15 14:49:07,932 [INFO]   API 拦截成功: 100 条产品数据 (total=77941, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:49:08,028 [INFO]   ✓ 第 28 页获取 100 条数据
+2026-04-15 14:49:08,028 [INFO] [29/100] 已获取 2801 条, 等待 5.2s 后翻页...
+2026-04-15 14:49:28,918 [INFO]   API 拦截成功: 100 条产品数据 (total=77941, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:49:29,875 [INFO]   ✓ 第 29 页获取 100 条数据
+2026-04-15 14:49:29,875 [INFO] [30/100] 已获取 2901 条, 等待 4.3s 后翻页...
+2026-04-15 14:49:36,910 [INFO]   API 拦截成功: 100 条产品数据 (total=77940, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:49:37,704 [INFO]   ✓ 第 30 页获取 100 条数据
+2026-04-15 14:49:37,706 [INFO] 去重: 3001 → 2001 条
+2026-04-15 14:49:38,424 [INFO] ✓ JSON 已保存: D:\snf\git\scrapy\data\automotive\sellersprite_automotive_20260415_144516_checkpoint_p30.json
+2026-04-15 14:49:42,688 [INFO] ✓ Excel 已保存: D:\snf\git\scrapy\data\automotive\sellersprite_automotive_20260415_144516_checkpoint_p30.xlsx (2001 行, 171 列)
+2026-04-15 14:49:42,688 [INFO]   列名: ['id', 'label', 'nodeLabel', 'alias', 'products', 'nodeLabelLocale', 'nodeLabelPathLocale', 'children', 'guestId', 'pages', 'page', 'size', 'total', 'took', 'url', 'items', 'terminal', 'hasNextPage', 'marketId', 'station']...
+2026-04-15 14:49:42,690 [INFO]   ✓ 已保存 checkpoint (第 30 页)
+2026-04-15 14:49:42,690 [INFO] [31/100] 已获取 3001 条, 等待 5.1s 后翻页...
+2026-04-15 14:49:50,847 [INFO]   API 拦截成功: 100 条产品数据 (total=77940, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:49:51,472 [INFO]   ✓ 第 31 页获取 100 条数据
+2026-04-15 14:49:51,472 [INFO] [32/100] 已获取 3101 条, 等待 4.0s 后翻页...
+2026-04-15 14:49:57,985 [INFO]   API 拦截成功: 100 条产品数据 (total=77939, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:49:58,043 [INFO]   ✓ 第 32 页获取 100 条数据
+2026-04-15 14:49:58,043 [INFO] [33/100] 已获取 3201 条, 等待 5.8s 后翻页...
+2026-04-15 14:50:08,210 [INFO]   API 拦截成功: 100 条产品数据 (total=77939, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:50:08,685 [INFO]   ✓ 第 33 页获取 100 条数据
+2026-04-15 14:50:08,686 [INFO] [34/100] 已获取 3301 条, 等待 4.7s 后翻页...
+2026-04-15 14:50:15,960 [INFO]   API 拦截成功: 100 条产品数据 (total=77939, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:50:15,960 [INFO]   ✓ 第 34 页获取 100 条数据
+2026-04-15 14:50:15,961 [INFO] [35/100] 已获取 3401 条, 等待 5.9s 后翻页...
+2026-04-15 14:50:24,448 [INFO]   API 拦截成功: 100 条产品数据 (total=77939, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:50:25,433 [INFO]   ✓ 第 35 页获取 100 条数据
+2026-04-15 14:50:25,433 [INFO] [36/100] 已获取 3501 条, 等待 5.0s 后翻页...
+2026-04-15 14:50:33,218 [INFO]   API 拦截成功: 100 条产品数据 (total=77939, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:50:34,112 [INFO]   ✓ 第 36 页获取 100 条数据
+2026-04-15 14:50:34,113 [INFO] [37/100] 已获取 3601 条, 等待 4.9s 后翻页...
+2026-04-15 14:50:42,534 [INFO]   API 拦截成功: 100 条产品数据 (total=77939, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:50:42,658 [INFO]   ✓ 第 37 页获取 100 条数据
+2026-04-15 14:50:42,658 [INFO] [38/100] 已获取 3701 条, 等待 5.1s 后翻页...
+2026-04-15 14:50:50,231 [INFO]   API 拦截成功: 100 条产品数据 (total=77938, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:50:50,354 [INFO]   ✓ 第 38 页获取 100 条数据
+2026-04-15 14:50:50,355 [INFO] [39/100] 已获取 3801 条, 等待 4.4s 后翻页...
+2026-04-15 14:50:57,265 [INFO]   API 拦截成功: 100 条产品数据 (total=77938, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:50:57,375 [INFO]   ✓ 第 39 页获取 100 条数据
+2026-04-15 14:50:57,375 [INFO] [40/100] 已获取 3901 条, 等待 3.5s 后翻页...
+2026-04-15 14:51:03,520 [INFO]   API 拦截成功: 100 条产品数据 (total=77938, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:51:03,567 [INFO]   ✓ 第 40 页获取 100 条数据
+2026-04-15 14:51:03,569 [INFO] 去重: 4001 → 2001 条
+2026-04-15 14:51:04,298 [INFO] ✓ JSON 已保存: D:\snf\git\scrapy\data\automotive\sellersprite_automotive_20260415_144516_checkpoint_p40.json
+2026-04-15 14:51:08,585 [INFO] ✓ Excel 已保存: D:\snf\git\scrapy\data\automotive\sellersprite_automotive_20260415_144516_checkpoint_p40.xlsx (2001 行, 171 列)
+2026-04-15 14:51:08,585 [INFO]   列名: ['id', 'label', 'nodeLabel', 'alias', 'products', 'nodeLabelLocale', 'nodeLabelPathLocale', 'children', 'guestId', 'pages', 'page', 'size', 'total', 'took', 'url', 'items', 'terminal', 'hasNextPage', 'marketId', 'station']...
+2026-04-15 14:51:08,586 [INFO]   ✓ 已保存 checkpoint (第 40 页)
+2026-04-15 14:51:08,587 [INFO] [41/100] 已获取 4001 条, 等待 3.8s 后翻页...
+2026-04-15 14:51:18,459 [INFO]   API 拦截成功: 100 条产品数据 (total=77938, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:51:19,149 [INFO]   ✓ 第 41 页获取 100 条数据
+2026-04-15 14:51:19,150 [INFO] [42/100] 已获取 4101 条, 等待 5.8s 后翻页...
+2026-04-15 14:51:27,741 [INFO]   API 拦截成功: 100 条产品数据 (total=77938, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:51:28,687 [INFO]   ✓ 第 42 页获取 100 条数据
+2026-04-15 14:51:28,687 [INFO] [43/100] 已获取 4201 条, 等待 3.5s 后翻页...
+2026-04-15 14:51:34,746 [INFO]   API 拦截成功: 100 条产品数据 (total=77938, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:51:34,850 [INFO]   ✓ 第 43 页获取 100 条数据
+2026-04-15 14:51:34,851 [INFO] [44/100] 已获取 4301 条, 等待 3.6s 后翻页...
+2026-04-15 14:51:41,271 [INFO]   API 拦截成功: 100 条产品数据 (total=77937, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:51:42,149 [INFO]   ✓ 第 44 页获取 100 条数据
+2026-04-15 14:51:42,149 [INFO] [45/100] 已获取 4401 条, 等待 5.2s 后翻页...
+2026-04-15 14:51:49,875 [INFO]   API 拦截成功: 100 条产品数据 (total=77937, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:51:49,967 [INFO]   ✓ 第 45 页获取 100 条数据
+2026-04-15 14:51:49,968 [INFO] [46/100] 已获取 4501 条, 等待 4.4s 后翻页...
+2026-04-15 14:51:57,389 [INFO]   API 拦截成功: 100 条产品数据 (total=77937, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:51:58,024 [INFO]   ✓ 第 46 页获取 100 条数据
+2026-04-15 14:51:58,024 [INFO] [47/100] 已获取 4601 条, 等待 3.6s 后翻页...
+2026-04-15 14:52:04,128 [INFO]   API 拦截成功: 100 条产品数据 (total=77937, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:52:04,128 [INFO]   ✓ 第 47 页获取 100 条数据
+2026-04-15 14:52:04,129 [INFO] [48/100] 已获取 4701 条, 等待 4.3s 后翻页...
+2026-04-15 14:52:10,974 [INFO]   API 拦截成功: 100 条产品数据 (total=77937, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:52:11,073 [INFO]   ✓ 第 48 页获取 100 条数据
+2026-04-15 14:52:11,074 [INFO] [49/100] 已获取 4801 条, 等待 4.7s 后翻页...
+2026-04-15 14:52:18,300 [INFO]   API 拦截成功: 100 条产品数据 (total=77937, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:52:18,300 [INFO]   ✓ 第 49 页获取 100 条数据
+2026-04-15 14:52:18,300 [INFO] [50/100] 已获取 4901 条, 等待 4.5s 后翻页...
+2026-04-15 14:52:25,334 [INFO]   API 拦截成功: 100 条产品数据 (total=77937, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:52:25,392 [INFO]   ✓ 第 50 页获取 100 条数据
+2026-04-15 14:52:25,396 [INFO] 去重: 5001 → 2001 条
+2026-04-15 14:52:26,253 [INFO] ✓ JSON 已保存: D:\snf\git\scrapy\data\automotive\sellersprite_automotive_20260415_144516_checkpoint_p50.json
+2026-04-15 14:52:30,666 [INFO] ✓ Excel 已保存: D:\snf\git\scrapy\data\automotive\sellersprite_automotive_20260415_144516_checkpoint_p50.xlsx (2001 行, 171 列)
+2026-04-15 14:52:30,666 [INFO]   列名: ['id', 'label', 'nodeLabel', 'alias', 'products', 'nodeLabelLocale', 'nodeLabelPathLocale', 'children', 'guestId', 'pages', 'page', 'size', 'total', 'took', 'url', 'items', 'terminal', 'hasNextPage', 'marketId', 'station']...
+2026-04-15 14:52:30,667 [INFO]   ✓ 已保存 checkpoint (第 50 页)
+2026-04-15 14:52:30,668 [INFO] [51/100] 已获取 5001 条, 等待 5.3s 后翻页...
+2026-04-15 14:52:38,826 [INFO]   API 拦截成功: 100 条产品数据 (total=77937, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:52:39,584 [INFO]   ✓ 第 51 页获取 100 条数据
+2026-04-15 14:52:39,584 [INFO] [52/100] 已获取 5101 条, 等待 3.8s 后翻页...
+2026-04-15 14:52:45,899 [INFO]   API 拦截成功: 100 条产品数据 (total=77937, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:52:45,983 [INFO]   ✓ 第 52 页获取 100 条数据
+2026-04-15 14:52:45,984 [INFO] [53/100] 已获取 5201 条, 等待 5.7s 后翻页...
+2026-04-15 14:52:54,482 [INFO]   API 拦截成功: 100 条产品数据 (total=77937, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:52:54,543 [INFO]   ✓ 第 53 页获取 100 条数据
+2026-04-15 14:52:54,543 [INFO] [54/100] 已获取 5301 条, 等待 3.8s 后翻页...
+2026-04-15 14:53:00,907 [INFO]   API 拦截成功: 100 条产品数据 (total=77937, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:53:00,934 [INFO]   ✓ 第 54 页获取 100 条数据
+2026-04-15 14:53:00,934 [INFO] [55/100] 已获取 5401 条, 等待 3.3s 后翻页...
+2026-04-15 14:53:06,835 [INFO]   API 拦截成功: 100 条产品数据 (total=77937, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:53:06,888 [INFO]   ✓ 第 55 页获取 100 条数据
+2026-04-15 14:53:06,889 [INFO] [56/100] 已获取 5501 条, 等待 4.6s 后翻页...
+2026-04-15 14:53:14,117 [INFO]   API 拦截成功: 100 条产品数据 (total=77937, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:53:15,057 [INFO]   ✓ 第 56 页获取 100 条数据
+2026-04-15 14:53:15,057 [INFO] [57/100] 已获取 5601 条, 等待 5.8s 后翻页...
+2026-04-15 14:53:23,472 [INFO]   API 拦截成功: 100 条产品数据 (total=77937, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:53:24,462 [INFO]   ✓ 第 57 页获取 100 条数据
+2026-04-15 14:53:24,463 [INFO] [58/100] 已获取 5701 条, 等待 5.3s 后翻页...
+2026-04-15 14:53:32,325 [INFO]   API 拦截成功: 100 条产品数据 (total=77937, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:53:32,350 [INFO]   ✓ 第 58 页获取 100 条数据
+2026-04-15 14:53:32,351 [INFO] [59/100] 已获取 5801 条, 等待 4.2s 后翻页...
+2026-04-15 14:53:39,215 [INFO]   API 拦截成功: 100 条产品数据 (total=77937, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:53:40,171 [INFO]   ✓ 第 59 页获取 100 条数据
+2026-04-15 14:53:40,172 [INFO] [60/100] 已获取 5901 条, 等待 4.8s 后翻页...
+2026-04-15 14:53:47,598 [INFO]   API 拦截成功: 100 条产品数据 (total=77937, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:53:48,550 [INFO]   ✓ 第 60 页获取 100 条数据
+2026-04-15 14:53:48,553 [INFO] 去重: 6001 → 2001 条
+2026-04-15 14:53:49,316 [INFO] ✓ JSON 已保存: D:\snf\git\scrapy\data\automotive\sellersprite_automotive_20260415_144516_checkpoint_p60.json
+2026-04-15 14:53:53,756 [INFO] ✓ Excel 已保存: D:\snf\git\scrapy\data\automotive\sellersprite_automotive_20260415_144516_checkpoint_p60.xlsx (2001 行, 171 列)
+2026-04-15 14:53:53,757 [INFO]   列名: ['id', 'label', 'nodeLabel', 'alias', 'products', 'nodeLabelLocale', 'nodeLabelPathLocale', 'children', 'guestId', 'pages', 'page', 'size', 'total', 'took', 'url', 'items', 'terminal', 'hasNextPage', 'marketId', 'station']...
+2026-04-15 14:53:53,758 [INFO]   ✓ 已保存 checkpoint (第 60 页)
+2026-04-15 14:53:53,758 [INFO] [61/100] 已获取 6001 条, 等待 5.4s 后翻页...
+2026-04-15 14:54:02,148 [INFO]   API 拦截成功: 100 条产品数据 (total=77937, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:54:02,878 [INFO]   ✓ 第 61 页获取 100 条数据
+2026-04-15 14:54:02,878 [INFO] [62/100] 已获取 6101 条, 等待 5.4s 后翻页...
+2026-04-15 14:54:11,049 [INFO]   API 拦截成功: 100 条产品数据 (total=77936, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:54:11,923 [INFO]   ✓ 第 62 页获取 100 条数据
+2026-04-15 14:54:11,923 [INFO] [63/100] 已获取 6201 条, 等待 4.7s 后翻页...
+2026-04-15 14:54:19,451 [INFO]   API 拦截成功: 100 条产品数据 (total=77936, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 14:54:20,224 [INFO]   ✓ 第 63 页获取 100 条数据
+2026-04-15 14:54:20,224 [INFO] [64/100] 已获取 6301 条, 等待 4.8s 后翻页...
+2026-04-15 15:15:46,274 [INFO] ============================================================
+2026-04-15 15:15:46,274 [INFO] SellerSprite 产品数据爬虫启动
+2026-04-15 15:15:46,275 [INFO] 目标分类: Automotive (节点ID: 15684181)
+2026-04-15 15:15:46,275 [INFO] 目标数据量: 10000 条
+2026-04-15 15:15:46,275 [INFO] 每页: 100 条
+2026-04-15 15:15:46,275 [INFO] ============================================================
+2026-04-15 15:15:46,741 [INFO] 发现已保存的登录状态，尝试复用...
+2026-04-15 15:15:46,886 [INFO] 检查登录状态...
+2026-04-15 15:15:54,777 [INFO] 当前页面: https://www.sellersprite.com/w/user/login?callback=%2Fv3%2Fdashboard
+2026-04-15 15:15:54,777 [INFO] 需要登录，开始登录流程...
+2026-04-15 15:15:56,781 [INFO] 当前登录页面: https://www.sellersprite.com/w/user/login?callback=%2Fv3%2Fdashboard
+2026-04-15 15:16:26,808 [ERROR] 爬取过程中出错: ElementHandle.click: Timeout 30000ms exceeded.
+Call log:
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    57 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+Traceback (most recent call last):
+  File "D:\snf\git\scrapy\sellersprite_spider.py", line 110, in run
+    await self._login(state_file)
+  File "D:\snf\git\scrapy\sellersprite_spider.py", line 168, in _login
+    await self._do_login()
+  File "D:\snf\git\scrapy\sellersprite_spider.py", line 275, in _do_login
+    await elem.click()
+  File "D:\software\anaconda\envs\snf\Lib\site-packages\playwright\async_api\_generated.py", line 2157, in click
+    await self._impl_obj.click(
+  File "D:\software\anaconda\envs\snf\Lib\site-packages\playwright\_impl\_element_handle.py", line 143, in click
+    await self._channel.send(
+  File "D:\software\anaconda\envs\snf\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\software\anaconda\envs\snf\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: ElementHandle.click: Timeout 30000ms exceeded.
+Call log:
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    57 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2026-04-15 15:16:26,814 [INFO] 浏览器登录状态已保存
+2026-04-15 15:20:49,068 [INFO] ============================================================
+2026-04-15 15:20:49,068 [INFO] SellerSprite 产品数据爬虫启动
+2026-04-15 15:20:49,068 [INFO] 目标分类: Automotive (节点ID: 15684181)
+2026-04-15 15:20:49,068 [INFO] 目标数据量: 10000 条
+2026-04-15 15:20:49,068 [INFO] 每页: 100 条
+2026-04-15 15:20:49,068 [INFO] ============================================================
+2026-04-15 15:20:49,512 [INFO] 发现已保存的登录状态，尝试复用...
+2026-04-15 15:20:49,655 [INFO] 检查登录状态...
+2026-04-15 15:21:08,536 [INFO] 当前页面: https://www.sellersprite.com/
+2026-04-15 15:21:08,559 [INFO] 检测到登录按钮，需要登录...
+2026-04-15 15:21:08,559 [INFO] 尝试访问登录页: https://www.sellersprite.com/cn/w/user/login
+2026-04-15 15:21:15,626 [INFO] 当前登录页面: https://www.sellersprite.com/cn/w/user/login
+2026-04-15 15:21:16,060 [INFO] 已填写用户名 (选择器: input[name="email"])
+2026-04-15 15:21:17,023 [INFO] 已填写密码 (选择器: input[type="password"])
+2026-04-15 15:21:17,552 [WARNING] 未找到登录按钮，请手动点击登录
+2026-04-15 15:21:28,193 [INFO] ✓ API 拦截器已注册
+2026-04-15 15:21:28,193 [INFO] 共 2 个价格分片待爬取
+2026-04-15 15:21:28,193 [INFO] 
+2026-04-15 15:21:28,193 [INFO] ============================================================
+2026-04-15 15:21:28,193 [INFO] 价格分片 [1/2]: $0-$5
+2026-04-15 15:21:28,193 [INFO] ============================================================
+2026-04-15 15:21:28,193 [INFO] 导航到产品调研页面...
+2026-04-15 15:21:28,193 [INFO] URL: https://www.sellersprite.com/v3/product-research?market=US&page=1&size=100&symbolFlag=false&monthName=bsr_sales_nearly&s...
+2026-04-15 15:21:29,200 [INFO] ✓ 发现 API 端点: https://www.sellersprite.com/v3/api/product-research/support_new_station
+2026-04-15 15:21:29,213 [INFO]   API 拦截成功: 1 条产品数据 (新增 1, 重复 0, total=None, URL片段=...https://www.sellersprite.com/v3/api/product-research/US/nodes)
+2026-04-15 15:21:29,213 [INFO]   数据字段 (8 个): ['id', 'label', 'nodeLabel', 'alias', 'products', 'nodeLabelLocale', 'nodeLabelPathLocale', 'children']
+2026-04-15 15:21:31,052 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1145, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 15:21:35,076 [INFO] ✓ 页面已加载: https://www.sellersprite.com/v3/product-research?market=US&page=1&size=100&symbolFlag=false&monthNam
+2026-04-15 15:21:35,076 [INFO] 等待首页数据加载...
+2026-04-15 15:21:35,112 [INFO]   找到数据表格: .el-table
+2026-04-15 15:22:05,402 [WARNING] 首页数据未被拦截到
+2026-04-15 15:22:05,402 [INFO] 可能需要检查 API 端点模式...
+2026-04-15 15:22:05,402 [INFO] 尝试从页面 DOM 直接抓取数据...
+2026-04-15 15:22:05,402 [INFO] 尝试从 DOM 提取数据...
+2026-04-15 15:22:05,635 [INFO]   页面内容长度: 4590851 字符
+2026-04-15 15:22:05,672 [INFO]   找到 100 行表格数据
+2026-04-15 15:22:10,672 [INFO] 开始翻页爬取: API 报告总页数 12, 本分片最多翻 12 页
+2026-04-15 15:22:10,672 [INFO] [2/12] 已获取 201 条 (唯一: 101), 等待 4.0s 后翻页...
+2026-04-15 15:22:17,263 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1145, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 15:22:17,263 [INFO]   ✓ 第 2 页获取 100 条数据
+2026-04-15 15:22:17,263 [INFO] [3/12] 已获取 301 条 (唯一: 201), 等待 5.6s 后翻页...
+2026-04-15 15:22:25,373 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1145, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 15:22:25,430 [INFO]   ✓ 第 3 页获取 100 条数据
+2026-04-15 15:22:25,431 [INFO] [4/12] 已获取 401 条 (唯一: 301), 等待 4.3s 后翻页...
+2026-04-15 15:22:32,545 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1145, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 15:22:33,330 [INFO]   ✓ 第 4 页获取 100 条数据
+2026-04-15 15:22:33,330 [INFO] [5/12] 已获取 501 条 (唯一: 401), 等待 3.0s 后翻页...
+2026-04-15 15:22:38,860 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1145, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 15:22:39,032 [INFO]   ✓ 第 5 页获取 100 条数据
+2026-04-15 15:22:39,032 [INFO] [6/12] 已获取 601 条 (唯一: 501), 等待 5.4s 后翻页...
+2026-04-15 15:22:47,182 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1145, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 15:22:48,049 [INFO]   ✓ 第 6 页获取 100 条数据
+2026-04-15 15:22:48,049 [INFO] [7/12] 已获取 701 条 (唯一: 601), 等待 3.1s 后翻页...
+2026-04-15 15:22:53,749 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1144, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 15:22:53,840 [INFO]   ✓ 第 7 页获取 100 条数据
+2026-04-15 15:22:53,840 [INFO] [8/12] 已获取 801 条 (唯一: 701), 等待 5.6s 后翻页...
+2026-04-15 15:23:02,121 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1144, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 15:23:02,277 [INFO]   ✓ 第 8 页获取 100 条数据
+2026-04-15 15:23:02,277 [INFO] [9/12] 已获取 901 条 (唯一: 801), 等待 5.7s 后翻页...
+2026-04-15 15:23:10,648 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1140, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-15 15:23:11,599 [INFO]   ✓ 第 9 页获取 100 条数据
+2026-04-15 15:23:11,599 [INFO] [10/12] 已获取 1001 条 (唯一: 901), 等待 4.3s 后翻页...
+2026-04-15 15:23:42,083 [WARNING]   ✗ 第 10 页未获取到新数据
+2026-04-15 15:23:42,083 [WARNING] 翻页失败，重试...
+2026-04-15 15:24:09,747 [WARNING]   ✗ 第 10 页未获取到新数据
+2026-04-15 15:24:48,797 [INFO] ============================================================
+2026-04-15 15:24:48,797 [INFO] SellerSprite 产品数据爬虫启动
+2026-04-15 15:24:48,797 [INFO] 目标分类: Automotive (节点ID: 15684181)
+2026-04-15 15:24:48,797 [INFO] 目标数据量: 10000 条
+2026-04-15 15:24:48,797 [INFO] 每页: 100 条
+2026-04-15 15:24:48,797 [INFO] ============================================================
+2026-04-15 15:24:49,248 [INFO] 发现已保存的登录状态，尝试复用...
+2026-04-15 15:24:49,384 [INFO] 检查登录状态...
+2026-04-15 15:25:08,515 [INFO] 当前页面: https://www.sellersprite.com/
+2026-04-15 15:25:08,537 [INFO] 检测到登录按钮，需要登录...
+2026-04-15 15:25:08,538 [INFO] 尝试访问登录页: https://www.sellersprite.com/cn/w/user/login
+2026-04-15 15:25:13,468 [INFO] 当前登录页面: https://www.sellersprite.com/cn/w/user/login
+2026-04-15 15:25:13,901 [INFO] 已填写用户名 (选择器: input[name="email"])
+2026-04-15 15:25:14,846 [INFO] 已填写密码 (选择器: input[type="password"])
+2026-04-15 15:25:15,375 [WARNING] 未找到登录按钮，请手动点击登录
+2026-04-20 14:28:49,444 [INFO] ============================================================
+2026-04-20 14:28:49,444 [INFO] SellerSprite 产品数据爬虫启动
+2026-04-20 14:28:49,444 [INFO] 目标分类: Women's Panties (节点ID: 7141123011:7147440011:1040660:9522931011:14333511:1044958)
+2026-04-20 14:28:49,444 [INFO] 目标数据量: 10000 条
+2026-04-20 14:28:49,444 [INFO] 每页: 100 条
+2026-04-20 14:28:49,444 [INFO] ============================================================
+2026-04-20 14:28:50,396 [INFO] 发现已保存的登录状态，尝试复用...
+2026-04-20 14:28:50,554 [INFO] 检查登录状态...
+2026-04-20 14:28:55,274 [INFO] 当前页面: https://www.sellersprite.com/v3/dashboard
+2026-04-20 14:28:55,292 [INFO] ✓ 已经处于登录状态
+2026-04-20 14:28:55,293 [INFO] ✓ API 拦截器已注册
+2026-04-20 14:28:55,293 [ERROR] 爬取过程中出错: module 'config' has no attribute 'PRICE_SLICES'
+Traceback (most recent call last):
+  File "D:\snf\git\scrapy\sellersprite_spider.py", line 116, in run
+    await self._crawl_with_price_slices()
+  File "D:\snf\git\scrapy\sellersprite_spider.py", line 611, in _crawl_with_price_slices
+    logger.info(f"共 {len(config.PRICE_SLICES)} 个价格分片待爬取")
+                         ^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'config' has no attribute 'PRICE_SLICES'
+2026-04-20 14:28:55,298 [INFO] 浏览器登录状态已保存
+2026-04-20 14:29:07,282 [INFO] ============================================================
+2026-04-20 14:29:07,282 [INFO] SellerSprite 产品数据爬虫启动
+2026-04-20 14:29:07,282 [INFO] 目标分类: Women's Panties (节点ID: 7141123011:7147440011:1040660:9522931011:14333511:1044958)
+2026-04-20 14:29:07,282 [INFO] 目标数据量: 10000 条
+2026-04-20 14:29:07,282 [INFO] 每页: 100 条
+2026-04-20 14:29:07,282 [INFO] ============================================================
+2026-04-20 14:29:07,726 [INFO] 发现已保存的登录状态，尝试复用...
+2026-04-20 14:29:07,866 [INFO] 检查登录状态...
+2026-04-20 14:29:24,108 [INFO] 当前页面: https://www.sellersprite.com/cn/w/user/login
+2026-04-20 14:29:24,108 [INFO] 需要登录，开始登录流程...
+2026-04-20 14:29:26,119 [INFO] 当前登录页面: https://www.sellersprite.com/cn/w/user/login
+2026-04-20 14:29:26,565 [INFO] 已填写用户名 (选择器: input[name="email"])
+2026-04-20 14:29:27,533 [INFO] 已填写密码 (选择器: input[type="password"])
+2026-04-20 14:29:28,063 [WARNING] 未找到登录按钮，请手动点击登录
+2026-04-20 14:29:35,654 [INFO] ✓ API 拦截器已注册
+2026-04-20 14:29:35,654 [ERROR] 爬取过程中出错: module 'config' has no attribute 'PRICE_SLICES'
+Traceback (most recent call last):
+  File "D:\snf\git\scrapy\sellersprite_spider.py", line 116, in run
+    await self._crawl_with_price_slices()
+  File "D:\snf\git\scrapy\sellersprite_spider.py", line 611, in _crawl_with_price_slices
+    logger.info(f"共 {len(config.PRICE_SLICES)} 个价格分片待爬取")
+                         ^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'config' has no attribute 'PRICE_SLICES'
+2026-04-20 14:29:35,668 [INFO] 浏览器登录状态已保存
+2026-04-20 14:40:50,248 [INFO] ============================================================
+2026-04-20 14:40:50,248 [INFO] SellerSprite 产品数据爬虫启动
+2026-04-20 14:40:50,248 [INFO] 目标分类: Women's Panties (节点ID: 7141123011:7147440011:1040660:9522931011:14333511:1044958)
+2026-04-20 14:40:50,248 [INFO] 目标数据量: 10000 条
+2026-04-20 14:40:50,248 [INFO] 每页: 100 条
+2026-04-20 14:40:50,248 [INFO] ============================================================
+2026-04-20 14:40:50,696 [INFO] 发现已保存的登录状态，尝试复用...
+2026-04-20 14:40:50,836 [INFO] 检查登录状态...
+2026-04-20 14:40:56,171 [INFO] 当前页面: https://www.sellersprite.com/v3/dashboard
+2026-04-20 14:40:56,191 [INFO] ✓ 已经处于登录状态
+2026-04-20 14:40:56,192 [INFO] ✓ API 拦截器已注册
+2026-04-20 14:40:56,192 [INFO] 导航到产品调研页面...
+2026-04-20 14:40:56,192 [INFO] URL: https://www.sellersprite.com/v3/product-research?market=US&page=1&size=100&symbolFlag=false&monthName=bsr_sales_nearly&s...
+2026-04-20 14:40:56,772 [INFO] ✓ 发现 API 端点: https://www.sellersprite.com/v3/api/product-research/support_new_station
+2026-04-20 14:40:56,966 [INFO]   API 拦截成功: 1 条产品数据 (新增 1, 重复 0, total=None, URL片段=...https://www.sellersprite.com/v3/api/product-research/US/nodes)
+2026-04-20 14:40:56,966 [INFO]   数据字段 (8 个): ['id', 'label', 'nodeLabel', 'alias', 'products', 'nodeLabelLocale', 'nodeLabelPathLocale', 'children']
+2026-04-20 14:40:59,290 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1925, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:41:01,854 [INFO] ✓ 页面已加载: https://www.sellersprite.com/v3/product-research?market=US&page=1&size=100&symbolFlag=false&monthNam
+2026-04-20 14:41:01,854 [INFO] 等待首页数据加载...
+2026-04-20 14:41:01,920 [INFO]   找到数据表格: .el-table
+2026-04-20 14:41:32,094 [WARNING] 首页数据未被拦截到
+2026-04-20 14:41:32,094 [INFO] 可能需要检查 API 端点模式...
+2026-04-20 14:41:32,094 [INFO] 尝试从页面 DOM 直接抓取数据...
+2026-04-20 14:41:32,094 [INFO] 尝试从 DOM 提取数据...
+2026-04-20 14:41:32,256 [INFO]   页面内容长度: 3359051 字符
+2026-04-20 14:41:32,291 [INFO]   找到 100 行表格数据
+2026-04-20 14:41:37,512 [INFO] 开始翻页爬取: API 报告总页数 20
+2026-04-20 14:41:37,512 [INFO] [2/20] 已获取 201 条 (唯一: 101), 等待 3.5s 后翻页...
+2026-04-20 14:41:43,693 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1925, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:41:44,578 [INFO]   ✓ 第 2 页获取 100 条数据
+2026-04-20 14:41:44,578 [INFO] [3/20] 已获取 301 条 (唯一: 201), 等待 3.3s 后翻页...
+2026-04-20 14:41:50,368 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1925, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:41:50,444 [INFO]   ✓ 第 3 页获取 100 条数据
+2026-04-20 14:41:50,444 [INFO] [4/20] 已获取 401 条 (唯一: 301), 等待 4.8s 后翻页...
+2026-04-20 14:41:57,814 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1925, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:41:58,713 [INFO]   ✓ 第 4 页获取 100 条数据
+2026-04-20 14:41:58,713 [INFO] [5/20] 已获取 501 条 (唯一: 401), 等待 3.3s 后翻页...
+2026-04-20 14:42:04,691 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1925, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:42:05,665 [INFO]   ✓ 第 5 页获取 100 条数据
+2026-04-20 14:42:05,665 [INFO] [6/20] 已获取 601 条 (唯一: 501), 等待 3.5s 后翻页...
+2026-04-20 14:42:11,799 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1925, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:42:12,623 [INFO]   ✓ 第 6 页获取 100 条数据
+2026-04-20 14:42:12,623 [INFO] [7/20] 已获取 701 条 (唯一: 601), 等待 3.4s 后翻页...
+2026-04-20 14:42:18,786 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1925, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:42:19,498 [INFO]   ✓ 第 7 页获取 100 条数据
+2026-04-20 14:42:19,498 [INFO] [8/20] 已获取 801 条 (唯一: 701), 等待 4.7s 后翻页...
+2026-04-20 14:42:26,866 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1922, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:42:26,908 [INFO]   ✓ 第 8 页获取 100 条数据
+2026-04-20 14:42:26,908 [INFO] [9/20] 已获取 901 条 (唯一: 801), 等待 4.0s 后翻页...
+2026-04-20 14:42:33,553 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1922, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:42:33,641 [INFO]   ✓ 第 9 页获取 100 条数据
+2026-04-20 14:42:33,641 [INFO] [10/20] 已获取 1001 条 (唯一: 901), 等待 5.0s 后翻页...
+2026-04-20 14:42:41,303 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1922, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:42:41,340 [INFO]   ✓ 第 10 页获取 100 条数据
+2026-04-20 14:42:41,340 [INFO] [11/20] 已获取 1101 条 (唯一: 1001), 等待 3.6s 后翻页...
+2026-04-20 14:42:48,348 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1914, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:42:49,332 [INFO]   ✓ 第 11 页获取 100 条数据
+2026-04-20 14:42:49,332 [INFO] [12/20] 已获取 1201 条 (唯一: 1101), 等待 4.9s 后翻页...
+2026-04-20 14:42:56,480 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1913, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:42:56,686 [INFO]   ✓ 第 12 页获取 100 条数据
+2026-04-20 14:42:56,686 [INFO] [13/20] 已获取 1301 条 (唯一: 1201), 等待 5.3s 后翻页...
+2026-04-20 14:43:04,655 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1913, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:43:05,583 [INFO]   ✓ 第 13 页获取 100 条数据
+2026-04-20 14:43:05,583 [INFO] [14/20] 已获取 1401 条 (唯一: 1301), 等待 3.3s 后翻页...
+2026-04-20 14:43:11,737 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1913, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:43:12,335 [INFO]   ✓ 第 14 页获取 100 条数据
+2026-04-20 14:43:12,335 [INFO] [15/20] 已获取 1501 条 (唯一: 1401), 等待 5.1s 后翻页...
+2026-04-20 14:43:20,136 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1913, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:43:20,221 [INFO]   ✓ 第 15 页获取 100 条数据
+2026-04-20 14:43:20,221 [INFO] [16/20] 已获取 1601 条 (唯一: 1501), 等待 5.0s 后翻页...
+2026-04-20 14:43:27,775 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1913, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:43:28,593 [INFO]   ✓ 第 16 页获取 100 条数据
+2026-04-20 14:43:28,593 [INFO] [17/20] 已获取 1701 条 (唯一: 1601), 等待 4.4s 后翻页...
+2026-04-20 14:43:35,616 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1913, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:43:35,669 [INFO]   ✓ 第 17 页获取 100 条数据
+2026-04-20 14:43:35,669 [INFO] [18/20] 已获取 1801 条 (唯一: 1701), 等待 3.6s 后翻页...
+2026-04-20 14:43:41,594 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1913, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:43:41,675 [INFO]   ✓ 第 18 页获取 100 条数据
+2026-04-20 14:43:41,675 [INFO] [19/20] 已获取 1901 条 (唯一: 1801), 等待 5.8s 后翻页...
+2026-04-20 14:43:50,963 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1913, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:43:51,046 [INFO]   ✓ 第 19 页获取 100 条数据
+2026-04-20 14:43:51,046 [INFO] [20/20] 已获取 2001 条 (唯一: 1901), 等待 4.6s 后翻页...
+2026-04-20 14:43:56,439 [INFO]   API 拦截成功: 13 条产品数据 (新增 13, 重复 0, total=1913, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:43:57,069 [INFO]   ✓ 第 20 页获取 13 条数据
+2026-04-20 14:43:57,069 [INFO] 去重: 2014 → 1914 条
+2026-04-20 14:43:57,698 [INFO] ✓ JSON 已保存: D:\snf\git\scrapy\data\womens_panties\sellersprite_womens_panties_20260420_144050.json
+2026-04-20 14:44:01,434 [INFO] ✓ Excel 已保存: D:\snf\git\scrapy\data\womens_panties\sellersprite_womens_panties_20260420_144050.xlsx (1914 行, 171 列)
+2026-04-20 14:44:01,435 [INFO]   列名: ['id', 'label', 'nodeLabel', 'alias', 'products', 'nodeLabelLocale', 'nodeLabelPathLocale', 'children', 'guestId', 'pages', 'page', 'size', 'total', 'took', 'url', 'items', 'terminal', 'hasNextPage', 'marketId', 'station']...
+2026-04-20 14:44:01,436 [INFO] ============================================================
+2026-04-20 14:44:01,436 [INFO] 爬取完成！共获取 1914 条唯一产品数据
+2026-04-20 14:44:01,437 [INFO] ============================================================
+2026-04-20 14:44:01,446 [INFO] 浏览器登录状态已保存
+2026-04-20 14:48:20,681 [INFO] ============================================================
+2026-04-20 14:48:20,681 [INFO] SellerSprite 产品数据爬虫启动
+2026-04-20 14:48:20,681 [INFO] 目标分类: Women's Panties (节点ID: 7141123011:7147440011:1040660:9522931011:14333511:1044958)
+2026-04-20 14:48:20,681 [INFO] 目标数据量: 10000 条
+2026-04-20 14:48:20,681 [INFO] 每页: 100 条
+2026-04-20 14:48:20,681 [INFO] ============================================================
+2026-04-20 14:48:21,142 [INFO] 发现已保存的登录状态，尝试复用...
+2026-04-20 14:48:21,284 [INFO] 检查登录状态...
+2026-04-20 14:48:25,685 [INFO] 当前页面: https://www.sellersprite.com/w/user/login?callback=%2Fv3%2Fdashboard
+2026-04-20 14:48:25,685 [INFO] 需要登录，开始登录流程...
+2026-04-20 14:48:27,696 [INFO] 当前登录页面: https://www.sellersprite.com/w/user/login?callback=%2Fv3%2Fdashboard
+2026-04-20 14:48:28,128 [INFO] 已填写用户名 (选择器: input[name="email"])
+2026-04-20 14:48:29,063 [INFO] 已填写密码 (选择器: input[type="password"])
+2026-04-20 14:48:29,591 [WARNING] 未找到登录按钮，请手动点击登录
+2026-04-20 14:48:36,436 [INFO] ✓ API 拦截器已注册
+2026-04-20 14:48:36,436 [INFO] 导航到产品调研页面...
+2026-04-20 14:48:36,436 [INFO] URL: https://www.sellersprite.com/v3/product-research?market=US&page=1&size=100&symbolFlag=false&monthName=bsr_sales_nearly&s...
+2026-04-20 14:48:37,100 [INFO] ✓ 发现 API 端点: https://www.sellersprite.com/v3/api/product-research/support_new_station
+2026-04-20 14:48:37,194 [INFO]   API 拦截成功: 1 条产品数据 (新增 1, 重复 0, total=None, URL片段=...https://www.sellersprite.com/v3/api/product-research/US/nodes)
+2026-04-20 14:48:37,194 [INFO]   数据字段 (8 个): ['id', 'label', 'nodeLabel', 'alias', 'products', 'nodeLabelLocale', 'nodeLabelPathLocale', 'children']
+2026-04-20 14:48:39,611 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1870, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:48:42,493 [INFO] ✓ 页面已加载: https://www.sellersprite.com/v3/product-research?market=US&page=1&size=100&symbolFlag=false&monthNam
+2026-04-20 14:48:42,493 [INFO] 等待首页数据加载...
+2026-04-20 14:48:42,523 [INFO]   找到数据表格: .el-table
+2026-04-20 14:49:12,818 [WARNING] 首页数据未被拦截到
+2026-04-20 14:49:12,818 [INFO] 可能需要检查 API 端点模式...
+2026-04-20 14:49:12,818 [INFO] 尝试从页面 DOM 直接抓取数据...
+2026-04-20 14:49:12,818 [INFO] 尝试从 DOM 提取数据...
+2026-04-20 14:49:12,971 [INFO]   页面内容长度: 3330377 字符
+2026-04-20 14:49:12,997 [INFO]   找到 100 行表格数据
+2026-04-20 14:49:18,044 [INFO] 开始翻页爬取: API 报告总页数 19
+2026-04-20 14:49:18,044 [INFO] [2/19] 已获取 201 条 (唯一: 101), 等待 4.2s 后翻页...
+2026-04-20 14:49:24,727 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1840, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:49:25,719 [INFO]   ✓ 第 2 页获取 100 条数据
+2026-04-20 14:49:25,719 [INFO] [3/19] 已获取 301 条 (唯一: 201), 等待 3.4s 后翻页...
+2026-04-20 14:49:31,691 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1818, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:49:31,710 [INFO]   ✓ 第 3 页获取 100 条数据
+2026-04-20 14:49:31,711 [INFO] [4/19] 已获取 401 条 (唯一: 301), 等待 4.9s 后翻页...
+2026-04-20 14:49:39,224 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1818, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:49:39,264 [INFO]   ✓ 第 4 页获取 100 条数据
+2026-04-20 14:49:39,264 [INFO] [5/19] 已获取 501 条 (唯一: 401), 等待 5.5s 后翻页...
+2026-04-20 14:49:47,397 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1818, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:49:47,499 [INFO]   ✓ 第 5 页获取 100 条数据
+2026-04-20 14:49:47,499 [INFO] [6/19] 已获取 601 条 (唯一: 501), 等待 5.6s 后翻页...
+2026-04-20 14:49:55,488 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1818, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:49:55,489 [INFO]   ✓ 第 6 页获取 100 条数据
+2026-04-20 14:49:55,489 [INFO] [7/19] 已获取 701 条 (唯一: 601), 等待 4.7s 后翻页...
+2026-04-20 14:50:02,629 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1813, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:50:02,738 [INFO]   ✓ 第 7 页获取 100 条数据
+2026-04-20 14:50:02,738 [INFO] [8/19] 已获取 801 条 (唯一: 701), 等待 4.1s 后翻页...
+2026-04-20 14:50:09,429 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1805, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:50:09,539 [INFO]   ✓ 第 8 页获取 100 条数据
+2026-04-20 14:50:09,539 [INFO] [9/19] 已获取 901 条 (唯一: 801), 等待 5.5s 后翻页...
+2026-04-20 14:50:17,551 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1805, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:50:18,439 [INFO]   ✓ 第 9 页获取 100 条数据
+2026-04-20 14:50:18,439 [INFO] [10/19] 已获取 1001 条 (唯一: 901), 等待 3.9s 后翻页...
+2026-04-20 14:50:24,822 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1805, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:50:25,007 [INFO]   ✓ 第 10 页获取 100 条数据
+2026-04-20 14:50:25,007 [INFO] [11/19] 已获取 1101 条 (唯一: 1001), 等待 3.1s 后翻页...
+2026-04-20 14:50:30,704 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1805, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:50:30,815 [INFO]   ✓ 第 11 页获取 100 条数据
+2026-04-20 14:50:30,815 [INFO] [12/19] 已获取 1201 条 (唯一: 1101), 等待 5.2s 后翻页...
+2026-04-20 14:50:38,819 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1803, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:50:38,906 [INFO]   ✓ 第 12 页获取 100 条数据
+2026-04-20 14:50:38,906 [INFO] [13/19] 已获取 1301 条 (唯一: 1201), 等待 3.7s 后翻页...
+2026-04-20 14:50:45,487 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1803, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:50:45,507 [INFO]   ✓ 第 13 页获取 100 条数据
+2026-04-20 14:50:45,507 [INFO] [14/19] 已获取 1401 条 (唯一: 1301), 等待 5.0s 后翻页...
+2026-04-20 14:50:52,981 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1799, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:50:53,927 [INFO]   ✓ 第 14 页获取 100 条数据
+2026-04-20 14:50:53,927 [INFO] [15/19] 已获取 1501 条 (唯一: 1401), 等待 3.6s 后翻页...
+2026-04-20 14:51:00,012 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1795, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:51:00,131 [INFO]   ✓ 第 15 页获取 100 条数据
+2026-04-20 14:51:00,131 [INFO] [16/19] 已获取 1601 条 (唯一: 1501), 等待 3.2s 后翻页...
+2026-04-20 14:51:05,734 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1795, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:51:06,008 [INFO]   ✓ 第 16 页获取 100 条数据
+2026-04-20 14:51:06,008 [INFO] [17/19] 已获取 1701 条 (唯一: 1601), 等待 5.8s 后翻页...
+2026-04-20 14:51:14,471 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1794, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:51:14,500 [INFO]   ✓ 第 17 页获取 100 条数据
+2026-04-20 14:51:14,500 [INFO] [18/19] 已获取 1801 条 (唯一: 1701), 等待 5.7s 后翻页...
+2026-04-20 14:51:22,842 [INFO]   API 拦截成功: 94 条产品数据 (新增 94, 重复 0, total=1794, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:51:22,980 [INFO]   ✓ 第 18 页获取 94 条数据
+2026-04-20 14:51:22,980 [INFO] [19/19] 已获取 1895 条 (唯一: 1795), 等待 4.4s 后翻页...
+2026-04-20 14:51:29,493 [INFO]   API 拦截成功: 100 条产品数据 (新增 4, 重复 96, total=1790, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:51:29,826 [INFO]   ✓ 第 19 页获取 100 条数据
+2026-04-20 14:51:29,827 [INFO] 去重: 1995 → 1799 条
+2026-04-20 14:51:30,309 [INFO] ✓ JSON 已保存: D:\snf\git\scrapy\data\womens_panties\sellersprite_womens_panties_20260420_144820.json
+2026-04-20 14:51:33,781 [INFO] ✓ Excel 已保存: D:\snf\git\scrapy\data\womens_panties\sellersprite_womens_panties_20260420_144820.xlsx (1799 行, 171 列)
+2026-04-20 14:51:33,781 [INFO]   列名: ['id', 'label', 'nodeLabel', 'alias', 'products', 'nodeLabelLocale', 'nodeLabelPathLocale', 'children', 'guestId', 'pages', 'page', 'size', 'total', 'took', 'url', 'items', 'terminal', 'hasNextPage', 'marketId', 'station']...
+2026-04-20 14:51:33,782 [INFO] ============================================================
+2026-04-20 14:51:33,782 [INFO] 爬取完成！共获取 1799 条唯一产品数据
+2026-04-20 14:51:33,782 [INFO] ============================================================
+2026-04-20 14:51:33,808 [INFO] 浏览器登录状态已保存
+2026-04-20 14:53:43,576 [INFO] ============================================================
+2026-04-20 14:53:43,576 [INFO] SellerSprite 产品数据爬虫启动
+2026-04-20 14:53:43,576 [INFO] 目标分类: Women's Panties (节点ID: 7141123011:7147440011:1040660:9522931011:14333511:1044958)
+2026-04-20 14:53:43,576 [INFO] 目标数据量: 10000 条
+2026-04-20 14:53:43,576 [INFO] 每页: 100 条
+2026-04-20 14:53:43,576 [INFO] ============================================================
+2026-04-20 14:53:44,034 [INFO] 发现已保存的登录状态，尝试复用...
+2026-04-20 14:53:44,180 [INFO] 检查登录状态...
+2026-04-20 14:53:48,405 [INFO] 当前页面: https://www.sellersprite.com/w/user/login?callback=%2Fv3%2Fdashboard
+2026-04-20 14:53:48,405 [INFO] 需要登录，开始登录流程...
+2026-04-20 14:53:50,415 [INFO] 当前登录页面: https://www.sellersprite.com/w/user/login?callback=%2Fv3%2Fdashboard
+2026-04-20 14:53:50,860 [INFO] 已填写用户名 (选择器: input[name="email"])
+2026-04-20 14:53:51,813 [INFO] 已填写密码 (选择器: input[type="password"])
+2026-04-20 14:53:52,344 [WARNING] 未找到登录按钮，请手动点击登录
+2026-04-20 14:53:56,254 [INFO] ✓ API 拦截器已注册
+2026-04-20 14:53:56,254 [INFO] 导航到产品调研页面...
+2026-04-20 14:53:56,254 [INFO] URL: https://www.sellersprite.com/v3/product-research?market=US&page=1&size=100&symbolFlag=false&monthName=bsr_sales_nearly&s...
+2026-04-20 14:53:56,886 [INFO] ✓ 发现 API 端点: https://www.sellersprite.com/v3/api/product-research/support_new_station
+2026-04-20 14:53:57,002 [INFO]   API 拦截成功: 1 条产品数据 (新增 1, 重复 0, total=None, URL片段=...https://www.sellersprite.com/v3/api/product-research/US/nodes)
+2026-04-20 14:53:57,002 [INFO]   数据字段 (8 个): ['id', 'label', 'nodeLabel', 'alias', 'products', 'nodeLabelLocale', 'nodeLabelPathLocale', 'children']
+2026-04-20 14:53:59,348 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=964, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:54:03,497 [INFO] ✓ 页面已加载: https://www.sellersprite.com/v3/product-research?market=US&page=1&size=100&symbolFlag=false&monthNam
+2026-04-20 14:54:03,498 [INFO] 等待首页数据加载...
+2026-04-20 14:54:03,531 [INFO]   找到数据表格: .el-table
+2026-04-20 14:54:33,717 [WARNING] 首页数据未被拦截到
+2026-04-20 14:54:33,717 [INFO] 可能需要检查 API 端点模式...
+2026-04-20 14:54:33,717 [INFO] 尝试从页面 DOM 直接抓取数据...
+2026-04-20 14:54:33,717 [INFO] 尝试从 DOM 提取数据...
+2026-04-20 14:54:33,871 [INFO]   页面内容长度: 3317188 字符
+2026-04-20 14:54:33,897 [INFO]   找到 100 行表格数据
+2026-04-20 14:54:38,577 [INFO] 开始翻页爬取: API 报告总页数 10
+2026-04-20 14:54:38,577 [INFO] [2/10] 已获取 201 条 (唯一: 101), 等待 4.4s 后翻页...
+2026-04-20 14:54:45,748 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=898, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:54:46,585 [INFO]   ✓ 第 2 页获取 100 条数据
+2026-04-20 14:54:46,585 [INFO] [3/10] 已获取 301 条 (唯一: 201), 等待 4.9s 后翻页...
+2026-04-20 14:54:53,939 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=886, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:54:54,012 [INFO]   ✓ 第 3 页获取 100 条数据
+2026-04-20 14:54:54,012 [INFO] [4/10] 已获取 401 条 (唯一: 301), 等待 4.2s 后翻页...
+2026-04-20 14:55:00,598 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=885, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:55:01,595 [INFO]   ✓ 第 4 页获取 100 条数据
+2026-04-20 14:55:01,595 [INFO] [5/10] 已获取 501 条 (唯一: 401), 等待 3.8s 后翻页...
+2026-04-20 14:55:07,879 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=884, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:55:08,815 [INFO]   ✓ 第 5 页获取 100 条数据
+2026-04-20 14:55:08,815 [INFO] [6/10] 已获取 601 条 (唯一: 501), 等待 5.5s 后翻页...
+2026-04-20 14:55:16,847 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=882, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:55:16,929 [INFO]   ✓ 第 6 页获取 100 条数据
+2026-04-20 14:55:16,930 [INFO] [7/10] 已获取 701 条 (唯一: 601), 等待 5.8s 后翻页...
+2026-04-20 14:55:25,458 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=874, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:55:25,550 [INFO]   ✓ 第 7 页获取 100 条数据
+2026-04-20 14:55:25,550 [INFO] [8/10] 已获取 801 条 (唯一: 701), 等待 5.1s 后翻页...
+2026-04-20 14:55:33,357 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=873, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:55:33,505 [INFO]   ✓ 第 8 页获取 100 条数据
+2026-04-20 14:55:33,505 [INFO] [9/10] 已获取 901 条 (唯一: 801), 等待 4.6s 后翻页...
+2026-04-20 14:55:39,946 [INFO]   API 拦截成功: 73 条产品数据 (新增 73, 重复 0, total=873, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:55:40,499 [INFO]   ✓ 第 9 页获取 73 条数据
+2026-04-20 14:55:40,499 [INFO] [10/10] 已获取 974 条 (唯一: 874), 等待 4.7s 后翻页...
+2026-04-20 14:55:47,818 [INFO]   API 拦截成功: 100 条产品数据 (新增 2, 重复 98, total=866, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:55:48,657 [INFO]   ✓ 第 10 页获取 100 条数据
+2026-04-20 14:55:48,658 [INFO] 去重: 1074 → 876 条
+2026-04-20 14:55:48,850 [INFO] ✓ JSON 已保存: D:\snf\git\scrapy\data\womens_panties\sellersprite_womens_panties_20260420_145343.json
+2026-04-20 14:55:50,542 [INFO] ✓ Excel 已保存: D:\snf\git\scrapy\data\womens_panties\sellersprite_womens_panties_20260420_145343.xlsx (876 行, 171 列)
+2026-04-20 14:55:50,542 [INFO]   列名: ['id', 'label', 'nodeLabel', 'alias', 'products', 'nodeLabelLocale', 'nodeLabelPathLocale', 'children', 'guestId', 'pages', 'page', 'size', 'total', 'took', 'url', 'items', 'terminal', 'hasNextPage', 'marketId', 'station']...
+2026-04-20 14:55:50,543 [INFO] ============================================================
+2026-04-20 14:55:50,543 [INFO] 爬取完成！共获取 876 条唯一产品数据
+2026-04-20 14:55:50,543 [INFO] ============================================================
+2026-04-20 14:55:50,549 [INFO] 浏览器登录状态已保存
+2026-04-20 14:56:24,994 [INFO] ============================================================
+2026-04-20 14:56:24,994 [INFO] SellerSprite 产品数据爬虫启动
+2026-04-20 14:56:24,994 [INFO] 目标分类: Women's Panties (节点ID: 7141123011:7147440011:1040660:9522931011:14333511:1044958)
+2026-04-20 14:56:24,994 [INFO] 目标数据量: 10000 条
+2026-04-20 14:56:24,994 [INFO] 每页: 100 条
+2026-04-20 14:56:24,994 [INFO] ============================================================
+2026-04-20 14:56:25,450 [INFO] 发现已保存的登录状态，尝试复用...
+2026-04-20 14:56:25,593 [INFO] 检查登录状态...
+2026-04-20 14:56:30,791 [INFO] 当前页面: https://www.sellersprite.com/v3/dashboard
+2026-04-20 14:56:30,809 [INFO] ✓ 已经处于登录状态
+2026-04-20 14:56:30,810 [INFO] ✓ API 拦截器已注册
+2026-04-20 14:56:30,810 [INFO] 导航到产品调研页面...
+2026-04-20 14:56:30,810 [INFO] URL: https://www.sellersprite.com/v3/product-research?market=US&page=1&size=100&symbolFlag=false&monthName=bsr_sales_nearly&s...
+2026-04-20 14:56:31,495 [INFO] ✓ 发现 API 端点: https://www.sellersprite.com/v3/api/product-research/support_new_station
+2026-04-20 14:56:31,616 [INFO]   API 拦截成功: 1 条产品数据 (新增 1, 重复 0, total=None, URL片段=...https://www.sellersprite.com/v3/api/product-research/US/nodes)
+2026-04-20 14:56:31,616 [INFO]   数据字段 (8 个): ['id', 'label', 'nodeLabel', 'alias', 'products', 'nodeLabelLocale', 'nodeLabelPathLocale', 'children']
+2026-04-20 14:56:33,600 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1108, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:56:36,527 [INFO] ✓ 页面已加载: https://www.sellersprite.com/v3/product-research?market=US&page=1&size=100&symbolFlag=false&monthNam
+2026-04-20 14:56:36,527 [INFO] 等待首页数据加载...
+2026-04-20 14:56:36,550 [INFO]   找到数据表格: .el-table
+2026-04-20 14:57:06,745 [WARNING] 首页数据未被拦截到
+2026-04-20 14:57:06,745 [INFO] 可能需要检查 API 端点模式...
+2026-04-20 14:57:06,745 [INFO] 尝试从页面 DOM 直接抓取数据...
+2026-04-20 14:57:06,745 [INFO] 尝试从 DOM 提取数据...
+2026-04-20 14:57:06,897 [INFO]   页面内容长度: 3277052 字符
+2026-04-20 14:57:06,928 [INFO]   找到 100 行表格数据
+2026-04-20 14:57:11,936 [INFO] 开始翻页爬取: API 报告总页数 12
+2026-04-20 14:57:11,936 [INFO] [2/12] 已获取 201 条 (唯一: 101), 等待 4.7s 后翻页...
+2026-04-20 14:57:20,179 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=1026, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:57:20,350 [INFO]   ✓ 第 2 页获取 100 条数据
+2026-04-20 14:57:20,350 [INFO] [3/12] 已获取 301 条 (唯一: 201), 等待 4.0s 后翻页...
+2026-04-20 14:57:28,326 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=944, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:57:28,326 [INFO]   ✓ 第 3 页获取 100 条数据
+2026-04-20 14:57:28,326 [INFO] [4/12] 已获取 401 条 (唯一: 301), 等待 5.9s 后翻页...
+2026-04-20 14:57:38,189 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=926, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:57:38,406 [INFO]   ✓ 第 4 页获取 100 条数据
+2026-04-20 14:57:38,406 [INFO] [5/12] 已获取 501 条 (唯一: 401), 等待 5.9s 后翻页...
+2026-04-20 14:57:48,294 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=910, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:57:48,363 [INFO]   ✓ 第 5 页获取 100 条数据
+2026-04-20 14:57:48,363 [INFO] [6/12] 已获取 601 条 (唯一: 501), 等待 5.0s 后翻页...
+2026-04-20 14:57:57,516 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=910, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:57:57,679 [INFO]   ✓ 第 6 页获取 100 条数据
+2026-04-20 14:57:57,679 [INFO] [7/12] 已获取 701 条 (唯一: 601), 等待 5.0s 后翻页...
+2026-04-20 14:58:06,257 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=910, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:58:06,385 [INFO]   ✓ 第 7 页获取 100 条数据
+2026-04-20 14:58:06,385 [INFO] [8/12] 已获取 801 条 (唯一: 701), 等待 6.0s 后翻页...
+2026-04-20 14:58:16,873 [INFO]   API 拦截成功: 100 条产品数据 (新增 100, 重复 0, total=910, URL片段=...https://www.sellersprite.com/v3/api/product-research)
+2026-04-20 14:58:17,394 [INFO]   ✓ 第 8 页获取 100 条数据
+2026-04-20 14:58:17,394 [INFO] [9/12] 已获取 901 条 (唯一: 801), 等待 4.7s 后翻页...
+2026-04-20 14:58:43,852 [WARNING]   ✗ 第 9 页未获取到新数据
+2026-04-20 14:58:43,852 [WARNING] 翻页失败，重试...
+2026-04-20 14:59:09,675 [WARNING]   ✗ 第 9 页未获取到新数据
+2026-04-20 14:59:34,427 [WARNING]   ✗ 第 9 页未获取到新数据
+2026-04-20 14:59:59,143 [WARNING]   ✗ 第 9 页未获取到新数据
+2026-04-20 14:59:59,143 [ERROR] 翻页失败 3 次，停止爬取
+2026-04-20 14:59:59,143 [INFO] 去重: 901 → 801 条
+2026-04-20 14:59:59,305 [INFO] ✓ JSON 已保存: D:\snf\git\scrapy\data\womens_panties\sellersprite_womens_panties_20260420_145624.json
+2026-04-20 15:00:00,829 [INFO] ✓ Excel 已保存: D:\snf\git\scrapy\data\womens_panties\sellersprite_womens_panties_20260420_145624.xlsx (801 行, 171 列)
+2026-04-20 15:00:00,829 [INFO]   列名: ['id', 'label', 'nodeLabel', 'alias', 'products', 'nodeLabelLocale', 'nodeLabelPathLocale', 'children', 'guestId', 'pages', 'page', 'size', 'total', 'took', 'url', 'items', 'terminal', 'hasNextPage', 'marketId', 'station']...
+2026-04-20 15:00:00,829 [INFO] ============================================================
+2026-04-20 15:00:00,829 [INFO] 爬取完成！共获取 801 条唯一产品数据
+2026-04-20 15:00:00,829 [INFO] ============================================================
+2026-04-20 15:00:00,835 [INFO] 浏览器登录状态已保存
